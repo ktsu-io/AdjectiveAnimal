@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "v5RBFwXktmwEnZnn5kjeJM0gpiI67yqKD0GoteyzgE6gzaFd2PQxn59h6bVUOtVMJvfGctonetYQKDz7cPJ2gg==",
+  "success": true,
+  "projectFilePath": "C:\\dev\\ktsu-io\\AdjectiveAnimal\\AdjectiveAnimal\\AdjectiveAnimal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matth\\.nuget\\packages\\microsoft.build.tasks.git\\8.0.0\\microsoft.build.tasks.git.8.0.0.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\microsoft.sourcelink.common\\8.0.0\\microsoft.sourcelink.common.8.0.0.nupkg.sha512",
+    "C:\\Users\\matth\\.nuget\\packages\\microsoft.sourcelink.github\\8.0.0\\microsoft.sourcelink.github.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
