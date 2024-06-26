@@ -4,18 +4,18 @@ using CommandLine;
 
 internal class Arguments
 {
-	[Option]
+	[Option('l')]
 	public bool Alliterate { get; set; } = false;
 
-	[Option]
-	public CaseType CaseType { get; set; } = CaseType.Title;
+	[Option('c')]
+	public string CaseType { get; set; } = "title";
 
-	[Option]
+	[Option('f')]
 	public char FirstLetter { get; set; } = char.MinValue;
 
-	[Option]
+	[Option('a')]
 	public int Amount { get; set; } = 1;
 
-	[Option]
-	public bool Pause { get; set; } = true;
+	[Option('p')]
+	public bool Pause { get; set; } = false;
 }

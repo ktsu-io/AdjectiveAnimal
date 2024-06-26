@@ -1,6 +1,7 @@
 namespace ktsu;
 
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using CommandLine;
 using ktsu.io.CaseConverter;
 
@@ -552,22 +553,34 @@ internal static class Program
 		"Zebu",
 	];
 
-
+	[RequiresDynamicCode("Calls ktsu.Program.Generate(Arguments)")]
 	private static void Main(string[] args)
 		=> Parser.Default.ParseArguments<Arguments>(args).WithParsed(Generate);
 
+	[RequiresDynamicCode("Calls System.Enum.GetValues(Type)")]
 	private static void Generate(Arguments args)
 	{
+		if (!Enum.TryParse(args.CaseType.ToPascalCase(), out CaseType caseType))
+		{
+			Console.WriteLine($"Invalid case type: {args.CaseType}");
+			Console.WriteLine("Valid options:");
+			foreach (var validCaseType in Enum.GetValues<CaseType>())
+			{
+				Console.WriteLine(validCaseType.ToString().ToLowerInvariant());
+			}
+			return;
+		}
+
 		var random = new Random((int)DateTime.Now.Ticks);
 		var results = new HashSet<string>();
 		int failCount = 0;
 
 		var candidateAdjectives = args.FirstLetter > char.MinValue
-			? Adjectives.Where(a => a[0] == args.FirstLetter)
+			? Adjectives.Where(a => a.StartsWith(args.FirstLetter.ToString(), StringComparison.InvariantCultureIgnoreCase))
 			: Adjectives.AsEnumerable();
 
 		var candidateAnimals = args.FirstLetter > char.MinValue
-			? Animals.Where(a => a[0] == args.FirstLetter)
+			? Animals.Where(a => a.StartsWith(args.FirstLetter.ToString(), StringComparison.InvariantCultureIgnoreCase))
 			: Animals.AsEnumerable();
 
 		int countAdjectives = candidateAdjectives.Count();
@@ -576,7 +589,7 @@ internal static class Program
 		{
 			string adjective = candidateAdjectives.Skip(random.Next(countAdjectives)).First();
 			var alliteratedAnimals = args.Alliterate
-				? candidateAnimals.Where(a => a[0] == adjective[0])
+				? candidateAnimals.Where(a => a.StartsWith(adjective[..1], StringComparison.InvariantCultureIgnoreCase))
 				: candidateAnimals;
 
 			int countAnimals = alliteratedAnimals.Count();
@@ -592,7 +605,7 @@ internal static class Program
 
 		foreach (string result in results)
 		{
-			string casedResult = args.CaseType switch
+			string casedResult = caseType switch
 			{
 				CaseType.Lower => result.ToLower(),
 				CaseType.Upper => result.ToUpper(),

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdjectiveAnimal", "AdjectiveAnimal\AdjectiveAnimal.csproj", "{08897E7E-13CD-4431-97F0-9D3ECFAAE027}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdjectiveAnimal", "AdjectiveAnimal.csproj", "{8C14E07E-8277-4199-AE8B-1A65E07320A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08897E7E-13CD-4431-97F0-9D3ECFAAE027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08897E7E-13CD-4431-97F0-9D3ECFAAE027}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08897E7E-13CD-4431-97F0-9D3ECFAAE027}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08897E7E-13CD-4431-97F0-9D3ECFAAE027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C14E07E-8277-4199-AE8B-1A65E07320A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C14E07E-8277-4199-AE8B-1A65E07320A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C14E07E-8277-4199-AE8B-1A65E07320A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C14E07E-8277-4199-AE8B-1A65E07320A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
